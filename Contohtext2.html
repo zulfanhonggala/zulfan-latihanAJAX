@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<title>Soal1.html</title>
+<head>
+<script> function loadXMLDoc(){
+var xmlhttp;
+if(window.XMLHttpRequest){
+	xmlhttp = new XMLHttpRequest();
+}else {
+	xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+}
+	xmlhttp.onreadystatechange=function(){
+if(xmlhttp.readyState==4 && xmlhttp.status==200){
+	document.getElementById("nama","nim","kelas").innerHTML=xmlhttp.responseText;
+	}}
+	xmlhttp.open("GET","text2.xml",true);
+	xmlhttp.send();
+}
+</script>
+</head>
+<body>
+<div id="nama","nim","kelas">
+<h2>Daftar Mahasiswa</h2></div>
+<button type="button" onclick="loadXMLDoc()">Tampilkan Data</button>
+</body>
+</html>
+
